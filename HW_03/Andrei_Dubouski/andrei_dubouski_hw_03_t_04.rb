@@ -14,4 +14,3 @@ end
 def task_4(str)
   str.is_a?(String) ? process_string(str) : 0
 end
-
