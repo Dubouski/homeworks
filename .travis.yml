@@ -9,5 +9,3 @@ before_install:
   - gem install rubocop -v 0.66
 script:
   - rubocop
-  - ruby HW_03/test_helper.rb
-
