@@ -1,11 +1,11 @@
-def fib(n)
-  case n
+def fib(number)
+  case number
   when 0
     0
   when 1
     1
   else
-    fib(n - 1) + fib(n - 2)
+    fib(number - 1) + fib(number - 2)
   end
 end
 
@@ -21,6 +21,7 @@ def task_4_1_b(number)
   if number.is_a?(Integer)
     res = Array.new(number) { 0 }
     return 0 if res.empty?
+
     res[0] = 1
     res[1] = 1
     (2...res.size).each { |ind| res[ind] = res [ind - 2] + res[ind - 1] }
