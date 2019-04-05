@@ -15,7 +15,7 @@ def get_r(msg)
 end
 
 def res_msg(line)
-  "#{get_d(line)} FROM #{get_v4?(line)}TO #{get_r(line).upcase}"
+  "#{get_d(line)} FROM: #{get_v4?(line)}TO: #{get_r(line).upcase}"
 end
 
 def process(str)
