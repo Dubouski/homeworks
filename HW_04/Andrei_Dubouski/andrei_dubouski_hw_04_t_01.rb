@@ -16,7 +16,7 @@ def task_4_1_a(number)
 end
 
 def task_4_1_b(number)
-  # used dynamic programming
+  # used dynamic programming, will be faster
   result = 0
   if number.is_a?(Integer)
     res = Array.new(number) { 0 }
