@@ -12,13 +12,13 @@ end
 def task_4_1_a(number)
   # used recursion
   res = 0
-  number.is_a?(Integer) ? fib(number) : res
+  number.is_a?(Integer) && number >= 0 ? fib(number) : res
 end
 
 def task_4_1_b(number)
-  # used dynamic programming, will be faster
+  # used dynamic programming
   result = 0
-  if number.is_a?(Integer)
+  if number.is_a?(Integer) && number >= 0
     res = Array.new(number) { 0 }
     return 0 if res.empty?
 
