@@ -11,11 +11,11 @@ end
 
 def get_r(msg)
   # "POST /test/2/run HTTP/1.1" 200 - 0.2277""
-  msg.scan(%r{\/[a-zA-Z]+\/[0-9a-zA-Z]+\/[0-9a-zA-Z]+})
+  msg.scan(%r{\/[a-zA-Z]+\/[0-9a-zA-Z]+\/[0-9a-zA-Z]+}).first.upcase
 end
 
 def res_msg(line)
-  "#{get_d(line)} FROM: #{get_v4?(line)}TO: #{get_r(line).upcase}"
+  "#{get_d(line)} FROM: #{get_v4?(line)}TO: #{get_r(line)}"
 rescue NoMethodError
   nil
 end
@@ -23,9 +23,7 @@ end
 def process(str)
   arr = []
   str.each_line do |line|
-    if line.is_a?(String) && line.downcase.include?('error')
-      puts "some error in line: #{line}"
-    else
+    unless line.downcase.include?('error')
       arr << res_msg(line) unless res_msg(line).nil?
     end
   end
