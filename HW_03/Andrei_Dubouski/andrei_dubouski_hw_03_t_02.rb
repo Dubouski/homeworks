@@ -11,11 +11,12 @@ end
 
 def get_r(msg)
   # "POST /test/2/run HTTP/1.1" 200 - 0.2277""
-  msg.scan(%r{\/[a-zA-Z]+\/[0-9a-zA-Z]+\/[0-9a-zA-Z]+}).first
+  rote = msg.scan(%r{\/[a-zA-Z]+\/[0-9a-zA-Z]+\/[0-9a-zA-Z]+})
+  rote.size.zero? ? '' : rote.first.upcase
 end
 
 def res_msg(line)
-  "#{get_d(line)} FROM: #{get_v4?(line)}TO: #{get_r(line).upcase}"
+  "#{get_d(line)} FROM: #{get_v4?(line)}TO: #{get_r(line)}"
 end
 
 def process(str)
