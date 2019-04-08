@@ -30,5 +30,5 @@ def process(hash)
 end
 
 def task_4_2(str)
-  process(YAML.safe_load(str)) if str.is_a?(String) && !str.empty? && !str.nil?
+  process(YAML.safe_load(str)) if str.is_a?(String) && !str.nil?
 end
