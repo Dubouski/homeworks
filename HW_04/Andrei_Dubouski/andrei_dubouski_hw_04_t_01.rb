@@ -1,7 +1,8 @@
 def fib(number)
   # used dynamic programming
   res = Array.new(number) { 0 }
-  return [] if res.empty?
+  return [0] if res.empty?
+  return [1] if number == 1
 
   res[0] = 1
   res[1] = 1
