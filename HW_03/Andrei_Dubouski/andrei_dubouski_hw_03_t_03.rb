@@ -6,14 +6,11 @@ end
 require 'time'
 
 def task_3(str)
-  event_time = []
+  time = []
   if str.is_a?(String)
-    str.each_line do |line|
-      if line.include?('Calling core with action:')
-        date = get_date(line)
-        event_time << Time.parse(date)
-      end
+    str.lines.map! do |s|
+      time << Time.parse(get_date(s)) if s.include?('Calling core with action:')
     end
   end
-  event_time.size == 2 ? (event_time[1] - event_time[0]).to_s : '0'
+  time.size == 2 ? (time[1] - time[0]).to_s : '0'
 end
