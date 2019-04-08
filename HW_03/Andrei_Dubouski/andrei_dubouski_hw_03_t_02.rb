@@ -21,13 +21,8 @@ rescue NoMethodError
 end
 
 def process(str)
-  arr = []
-  str.each_line do |line|
-    unless line.downcase.include?('error')
-      arr << res_msg(line) unless res_msg(line).nil?
-    end
-  end
-  arr
+  arr = str.lines.map! { |s| s.downcase.include?('error') ? '' : res_msg(s) }
+  arr.delete_if { |line| line == '' || line.nil? }
 end
 
 def task_2(str)
