@@ -1,16 +1,13 @@
-##
-# This class represents an human.
-
+# Some documentation about Human.
+# 'Human' is superclass for Mentor and Student.
 class Human
   # We are all humans)
   attr_accessor :name, :sex
-  attr_reader :birthday, :height # only reader
+  attr_reader :birthday # only reader
 
-  def initialize(name:, sex:, birthday:, height:)
+  def initialize(name:, sex:, birthday:)
     @name = name
     @sex = sex
     @birthday = birthday
-    @height = height
   end
-
 end
