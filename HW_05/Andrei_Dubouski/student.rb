@@ -5,10 +5,11 @@ require_relative 'api'
 # Some documentation about class Student.
 class Student < Human
   include Comparable
-  attr_accessor :homework_list
+  attr_accessor :homework_list, :mentors
 
   def initialize(name:, sex:, birthday:)
     @homework_list = []
+    @mentors = []
     super
   end
 
@@ -17,12 +18,12 @@ class Student < Human
     new_hw = Homework.new(homework_name: hw_name, student_name: @name)
     new_hw.source_code = source_code
     @homework_list << new_hw
+    new_hw
   end
 
   def submit_homework(hw_name)
     homework = @homework_list.select { |h| h.homework_name == hw_name }
-    # TODO: send post JSON using API
-    Api.send_data_as_json(homework) if homework.first
+    Api.send_data_as_json(homework, @name, mentors) if homework.first
   end
 
   def rewrite_homework(hw_name, new_source_code)

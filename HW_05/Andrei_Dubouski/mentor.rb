@@ -28,6 +28,7 @@ class Mentor < Human
 
   def subscribe_to_student(new_student)
     student_list << new_student unless student_list.each.include?(new_student)
+    new_student.mentors << self
   end
 
   def unread_notifications?

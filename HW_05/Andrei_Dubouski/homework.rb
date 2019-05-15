@@ -7,4 +7,9 @@ class Homework
     @homework_name = homework_name
     @student_name = student_name
   end
+
+  def to_s
+    # present something like ["Student #student_name has sent #homework_name"]
+    "Student #{student_name} has sent #{homework_name}"
+  end
 end
