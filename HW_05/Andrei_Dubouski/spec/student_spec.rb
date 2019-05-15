@@ -11,10 +11,6 @@ RSpec.describe Student do
   let(:hw_source_code) { 'puts "Hello world!"' }
   let(:hw_new_source_code) { 'puts "Hello Bob"' }
 
-  it 'return zero' do
-    expect(0).to eq(0)
-  end
-
   describe '#initialize' do
     it 'return name' do
       expect(subject.name).to eq name
