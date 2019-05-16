@@ -1,6 +1,5 @@
-# frozen_string_literal: true
+# rubocop:disable all
 
-require 'spec_helper'
 require_relative '../student.rb'
 
 # Tests for all methods from the class Student

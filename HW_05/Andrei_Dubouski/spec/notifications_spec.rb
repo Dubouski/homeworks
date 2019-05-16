@@ -1,7 +1,6 @@
-# frozen_string_literal: true
+# rubocop:disable all
 
 require 'rspec'
-require 'spec_helper'
 require_relative '../notification.rb'
 
 # Tests for all methods from the class Notifications

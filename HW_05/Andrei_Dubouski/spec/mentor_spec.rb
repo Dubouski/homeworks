@@ -1,7 +1,6 @@
-# frozen_string_literal: true
+# rubocop:disable all
 
 require 'rspec'
-require 'spec_helper'
 require_relative '../mentor.rb'
 require_relative '../homework.rb'
 require_relative '../student.rb'
