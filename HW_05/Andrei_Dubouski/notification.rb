@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # This class stores all notifications
 class Notifications
   attr_accessor :all_notif

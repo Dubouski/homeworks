@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Some documentation about Homework.
 class Homework
   attr_reader :homework_name, :student_name

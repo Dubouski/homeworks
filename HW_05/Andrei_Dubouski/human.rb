@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Some documentation about Human.
 # 'Human' is superclass for Mentor and Student.
 class Human
